@@ -59,6 +59,47 @@ A modern, interactive portfolio showcasing DevOps skills, projects, and experien
    npm run preview
    ```
 
+## Deployment
+
+This portfolio is configured for automatic deployment to GitHub Pages.
+
+### GitHub Pages (Recommended)
+
+The project includes a GitHub Actions workflow that automatically deploys to GitHub Pages on every push to the `main` branch.
+
+**Setup Steps:**
+
+1. **Enable GitHub Pages**
+   - Go to your repository settings
+   - Navigate to **Pages** section
+   - Under **Source**, select **GitHub Actions**
+
+2. **Add Gemini API Key Secret**
+   - Go to repository **Settings** → **Secrets and variables** → **Actions**
+   - Click **New repository secret**
+   - Name: `GEMINI_API_KEY`
+   - Value: Your Gemini API key
+
+3. **Push Changes**
+   ```bash
+   git add .
+   git commit -m "Configure GitHub Pages deployment"
+   git push origin main
+   ```
+
+4. **Access Your Site**
+   - Your portfolio will be live at: `https://christodwise.github.io/my-devops-portfolio/`
+   - Check deployment status in the **Actions** tab
+
+### Alternative: Vercel/Netlify
+
+You can also deploy to Vercel or Netlify by connecting your GitHub repository:
+
+- **Vercel**: Import project at [vercel.com](https://vercel.com)
+- **Netlify**: Import project at [netlify.com](https://netlify.com)
+
+Both platforms will auto-detect the Vite configuration and deploy automatically.
+
 ## Project Structure
 
 ```
