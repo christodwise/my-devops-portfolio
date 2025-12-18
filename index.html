@@ -7,6 +7,53 @@
   <title>Christo Jimmy | DevOps Engineer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
+    // GLOBAL ERROR HANDLER - INJECTED FOR DEBUGGING
+    (function() {
+      function showGlobalError(msg, source, lineno, colno, error) {
+        var errorBox = document.getElementById('global-error-box');
+        if (!errorBox) {
+          errorBox = document.createElement('div');
+          errorBox.id = 'global-error-box';
+          errorBox.style.position = 'fixed';
+          errorBox.style.top = '0';
+          errorBox.style.left = '0';
+          errorBox.style.width = '100%';
+          errorBox.style.padding = '20px';
+          errorBox.style.backgroundColor = '#f87171';
+          errorBox.style.color = '#fff';
+          errorBox.style.zIndex = '10000';
+          errorBox.style.fontFamily = 'monospace';
+          errorBox.style.wordBreak = 'break-word';
+          errorBox.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+          document.body.appendChild(errorBox);
+          
+          var header = document.createElement('h3');
+          header.textContent = 'Application Error (Debug Mode)';
+          header.style.margin = '0 0 10px 0';
+          errorBox.appendChild(header);
+        }
+        
+        var message = document.createElement('p');
+        message.style.margin = '5px 0';
+        message.textContent = 'Error: ' + msg + ' at ' + source + ':' + lineno + ':' + colno;
+        if(error && error.stack) {
+            var pre = document.createElement('pre');
+            pre.style.whiteSpace = 'pre-wrap';
+            pre.textContent = error.stack;
+            message.appendChild(pre);
+        }
+        errorBox.appendChild(message);
+        console.error('Global Error Caught:', msg, error);
+      }
+
+      window.onerror = showGlobalError;
+      
+      window.addEventListener('unhandledrejection', function(event) {
+        showGlobalError('Unhandled Rejection: ' + (event.reason ? (event.reason.message || event.reason) : 'Unknown'), 'Promise', 0, 0, event.reason);
+      });
+    })();
+  </script>
+  <script>
     tailwind.config = {
       theme: {
         extend: {
