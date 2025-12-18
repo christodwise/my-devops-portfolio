@@ -30,22 +30,15 @@ Keep answers brief and relevant to a recruiter or hiring manager.
 
 let ai: GoogleGenAI | null = null;
 
-// Initialize client with safety check for Environment Variables
-const apiKey = import.meta.env.VITE_GEMINI_API_KEY || (window as any).GEMINI_API_KEY;
-
-if (apiKey) {
-  try {
-    ai = new GoogleGenAI({ apiKey });
-  } catch (error) {
-    console.error("Failed to initialize GoogleGenAI:", error);
-  }
-} else {
-  console.warn("Gemini API Key is missing (checked import.meta.env.VITE_GEMINI_API_KEY).");
+// Initialize the client only if the key exists
+if (process.env.API_KEY) {
+  ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 }
 
 export const sendMessageToGemini = async (message: string): Promise<string> => {
   if (!ai) {
-    // Graceful fallback if API key is missing
+    // Graceful fallback if API key is missing in the environment
+    console.warn("Gemini API Key is missing. Returning mock response.");
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve("I'm currently in demo mode as the API key is not configured. However, Christo is an expert in AWS, Kubernetes, and Terraform. Please reach out to him via email!");
