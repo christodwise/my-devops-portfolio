@@ -1,7 +1,6 @@
-import { ReactNode } from 'react';
-
 export interface Experience {
   id: string;
+  version: string;
   company: string;
   role: string;
   period: string;
@@ -12,23 +11,38 @@ export interface Experience {
 export interface Project {
   id: string;
   title: string;
+  emoji: string;
   techStack: string[];
   description: string;
+  subtitle: string;
+  terminal: string[];
 }
 
 export interface SkillCategory {
   category: string;
+  color: 'pink' | 'blue' | 'sun' | 'mint' | 'lilac';
   skills: string[];
 }
 
 export interface ChatMessage {
-  role: 'user' | 'model';
+  role: 'user' | 'bot';
   text: string;
-  timestamp: Date;
 }
 
-export interface SocialLink {
-  platform: string;
-  url: string;
-  icon: ReactNode;
+export interface OpenSourceProject {
+  name: string;
+  repo: string;
+  tagline: string;
+  description: string;
+  tags: string[];
+  image?: string;
+  /** Shown instead of an image */
+  terminal?: string[];
+}
+
+export interface Service {
+  icon: 'pipeline' | 'k8s' | 'iac' | 'observe' | 'db' | 'tools';
+  title: string;
+  text: string;
+  tools: string[];
 }

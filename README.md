@@ -1,28 +1,31 @@
 # DevOps Portfolio
 
-A modern, interactive portfolio showcasing DevOps skills, projects, and experience. Built with React, TypeScript, and Vite, featuring an AI-powered chat assistant using Google's Gemini API.
+A scroll-driven 3D portfolio showcasing DevOps skills, projects, and experience. Built with React, TypeScript, Vite and three.js.
 
 ## Features
 
-- 🎨 Modern, responsive design
-- 💼 Portfolio sections: Hero, Experience, Projects, Skills, Contact
-- 🤖 AI Chat Assistant powered by Google Gemini
-- 📊 Interactive charts and visualizations
-- ⚡ Fast performance with Vite
+- 🧑‍💻 3D DevOps room: my character, animated as a cut-out puppet (breathing, head tilt toward your cursor, typing, blinking) (orange jacket, jeans, laptop in hand) in front of a desk with a live terminal, a wall dashboard and a blinking server rack
+- 🔷 Hologram "about" scene that scans my character from hologram to full colour as you scroll (000 → 100), with HUD panels for bio, skills, impact and certs
+- 🛠️ What I do: six service cards plus count-up numbers
+- 📜 Career told as a release changelog
+- ⭐ Open-source section featuring KubePulse, PG Analyzer, PG Shift and Mongo-Migrate, with real screenshots
+- 🗂️ Work projects with terminal thumbnails
+- 📦 Contact scene: I stand on a Docker-style container and hop when you reach for a contact button
+- 🤖 "Mini Christo" chat bot that answers from resume data (no API key needed)
+- ⚡ Phone-friendly: 3D is lazy-loaded, each scene only mounts near the viewport, pixel ratio is capped and drops on slow devices, reduced-motion respected, image fallback without WebGL
 
 ## Tech Stack
 
 - **Frontend**: React 19, TypeScript
 - **Build Tool**: Vite
-- **AI Integration**: Google Generative AI (Gemini)
-- **UI Components**: Lucide React icons
-- **Charts**: Recharts
+- **3D**: three.js, React Three Fiber, drei
+- **Styling**: Plain CSS (`index.css`)
+- **Icons**: Lucide React
 
 ## Prerequisites
 
 - Node.js (v16 or higher)
 - npm or yarn
-- Google Gemini API Key
 
 ## Getting Started
 
@@ -37,21 +40,19 @@ A modern, interactive portfolio showcasing DevOps skills, projects, and experien
    npm install
    ```
 
-3. **Set up environment variables**
-   - Create a `.env.local` file in the root directory
-   - Add your Gemini API key:
-     ```
-     GEMINI_API_KEY=your_api_key_here
-     ```
-
-4. **Run the development server**
+3. **Run the development server**
    ```bash
    npm run dev
    ```
 
-5. **Build for production**
+4. **Build for production**
    ```bash
    npm run build
+   ```
+
+5. **Deploy to GitHub Pages**
+   ```bash
+   npm run deploy
    ```
 
 6. **Preview production build**
@@ -63,17 +64,22 @@ A modern, interactive portfolio showcasing DevOps skills, projects, and experien
 
 ```
 ├── components/          # React components
-│   ├── Hero.tsx        # Landing section
-│   ├── Experience.tsx  # Work experience
-│   ├── Projects.tsx    # Portfolio projects
-│   ├── Skills.tsx      # Technical skills
-│   ├── Contact.tsx     # Contact form
-│   └── GeminiChat.tsx  # AI chat assistant
-├── services/           # API services
-│   └── geminiService.ts
+│   ├── Hero.tsx        # 3D room + name
+│   ├── About.tsx       # Hologram scene + HUD panels
+│   ├── Services.tsx    # What I do + numbers
+│   ├── Experience.tsx  # Career changelog
+│   ├── Projects.tsx    # Open source + work projects
+│   ├── Contact.tsx     # Contact scene
+│   ├── Lazy3D.tsx      # Mounts scenes near the viewport, WebGL fallback
+│   └── MiniChristo.tsx # Resume chat bot
+├── three/              # 3D scenes, props and the character cut-out (ChristoSprite)
+├── hooks/              # useInView + confetti
+├── public/christo.png  # Character cut-out (+ christo-face.png for the chat icon)
+├── public/puppet/     # The cut-out split into head / torso / arms / legs / blink layers
+├── public/projects/   # Screenshots from my GitHub repos
 ├── App.tsx             # Main application
-├── constants.tsx       # App constants
-├── types.ts            # TypeScript types
+├── constants.tsx       # All resume content lives here
+├── index.css           # Styles and animations
 └── vite.config.ts      # Vite configuration
 ```
 

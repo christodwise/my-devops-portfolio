@@ -11,14 +11,16 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@google/genai": "^1.30.0",
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
     "lucide-react": "^0.555.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "recharts": "^3.5.1"
+    "three": "^0.186.1"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
+    "@types/three": "^0.186.0",
     "@vitejs/plugin-react": "^5.0.0",
     "gh-pages": "^6.3.0",
     "typescript": "~5.8.2",
