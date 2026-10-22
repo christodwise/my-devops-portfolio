@@ -343,11 +343,11 @@ img, svg { display: block; max-width: 100%; }
 .hud-2, .hud-3 { left: calc(50% + 190px); }
 .hud-2::after, .hud-3::after { right: 100%; }
 .hud-2::before, .hud-3::before { right: calc(100% + 60px); }
-.hud-0 { top: 20%; width: 230px; }
-.hud-1 { top: 42%; }
-.hud-2 { top: 18%; width: 320px; }
-.hud-3 { top: 52%; width: 240px; }
-.hud-4 { top: 70%; }
+.hud-0 { top: 18%; width: 230px; }
+.hud-1 { top: 36%; }
+.hud-2 { top: 14%; width: 320px; }
+.hud-3 { top: 63%; width: 260px; }
+.hud-4 { top: 66%; }
 
 /* ---------- sections ---------- */
 .section,

@@ -50,7 +50,7 @@ const Projects: React.FC = () => {
         {rest.map((p) => <RepoCard key={p.name} p={p} />)}
       </div>
 
-      <h3 className="subhead">At work</h3>
+      <h3 className="subhead">Internal tools at work</h3>
       <div className="project-grid">
         {PROJECTS.map((p) => (
           <article key={p.id} className="project">

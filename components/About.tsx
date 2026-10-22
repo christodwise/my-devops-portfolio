@@ -39,18 +39,14 @@ const About: React.FC = () => {
         </div>
 
         <div className={panel(1)}>
-          <p>
-            DevOps engineer at dWise Healthcare IT since 2023. I automate infrastructure, run Kubernetes in
-            production and build open-source tools like KubePulse on the side. Before that, 3+ years of tech
-            support for banking and gaming apps.
-          </p>
+          <p>{RESUME_DATA.headline} Clients are hospitals and clinics in the UAE and India.</p>
         </div>
 
         <div className={panel(2)}>
           <h3>Skills</h3>
           <ul>
             {SKILLS.map((s) => (
-              <li key={s.category}><strong>{s.category}</strong> {s.skills.slice(0, 4).join(', ')}</li>
+              <li key={s.category}><strong>{s.category}</strong> {s.skills.slice(0, 3).join(', ')}</li>
             ))}
           </ul>
         </div>
@@ -67,8 +63,9 @@ const About: React.FC = () => {
         <div className={panel(4)}>
           <h3>Training</h3>
           <ul>
-            {RESUME_DATA.courses.map((c) => <li key={c}>{c} course</li>)}
             <li>{RESUME_DATA.education}</li>
+            <li>Courses: {RESUME_DATA.courses.join(', ')}</li>
+            <li>Speaks {RESUME_DATA.languages.join(', ')}</li>
           </ul>
         </div>
 

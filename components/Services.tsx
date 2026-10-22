@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Activity, Boxes, Database, FileCode2, Workflow, Wrench } from 'lucide-react';
+import { Activity, Boxes, Database, FileCode2, ShieldCheck, Workflow } from 'lucide-react';
 import { NUMBERS, SERVICES } from '../constants';
 import { Service } from '../types';
 import { prefersReducedMotion, useInView } from '../hooks/useInView';
@@ -10,7 +10,7 @@ const ICONS: Record<Service['icon'], React.ReactNode> = {
   iac: <FileCode2 size={22} />,
   observe: <Activity size={22} />,
   db: <Database size={22} />,
-  tools: <Wrench size={22} />,
+  security: <ShieldCheck size={22} />,
 };
 
 /** Counts up once when it scrolls into view */

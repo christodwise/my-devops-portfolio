@@ -96,7 +96,7 @@ export function createDashboard() {
     ctx.arc(150, 24, 6, 0, Math.PI * 2);
     ctx.fill();
     ctx.font = '700 15px sans-serif';
-    ctx.fillText('99.9% uptime', 380, 30);
+    ctx.fillText('all systems ok', 368, 30);
 
     // Request rate line chart
     ctx.fillStyle = '#181D30';
@@ -158,9 +158,9 @@ export function createNotes() {
   ctx.fillRect(0, 0, 512, 340);
   const notes: [string, string, number, number, number][] = [
     ['#FFE27A', 'no deploys\non friday', 40, 40, -0.08],
-    ['#A7F0C9', '99.9%\nuptime ✓', 200, 70, 0.06],
+    ['#A7F0C9', 'WAL-G\nbackups ✓', 200, 70, 0.06],
     ['#FFB3D1', 'rotate the\nsecrets!!', 350, 30, -0.04],
-    ['#B9C8FF', 'k8s 1.31\nupgrade', 120, 190, 0.05],
+    ['#B9C8FF', 'EKS\nupgrade', 120, 190, 0.05],
   ];
   notes.forEach(([bg, text, x, y, r]) => {
     ctx.save();

@@ -27,8 +27,8 @@ const Hero: React.FC = () => {
           <span>{last}</span>
         </h1>
         <p className="role-stamp">devops engineer</p>
-        <p className="hero3d-sub">I build the pipelines, clusters and dashboards that keep apps shipping.</p>
-        <p className="hero3d-now">Currently: DevOps at dWise Healthcare IT, Bangalore</p>
+        <p className="hero3d-sub">{RESUME_DATA.headline}</p>
+        <p className="hero3d-now">Currently: DevOps at dWise Healthcare IT (Lifetrenz), Bangalore</p>
         <div className="hero3d-actions">
           <a className="resume-btn" href={RESUME_DATA.resume} download>
             <Download size={17} aria-hidden="true" /> Download resume

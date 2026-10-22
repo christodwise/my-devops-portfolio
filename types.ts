@@ -41,7 +41,7 @@ export interface OpenSourceProject {
 }
 
 export interface Service {
-  icon: 'pipeline' | 'k8s' | 'iac' | 'observe' | 'db' | 'tools';
+  icon: 'pipeline' | 'k8s' | 'iac' | 'observe' | 'db' | 'security';
   title: string;
   text: string;
   tools: string[];

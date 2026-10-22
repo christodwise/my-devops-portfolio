@@ -14,7 +14,7 @@ const TOPICS: { keys: string[]; answer: () => string }[] = [
     answer: () => `Email ${RESUME_DATA.email}, call ${RESUME_DATA.phone}, or find me at ${RESUME_DATA.linkedin}.`,
   },
   {
-    keys: ['stack', 'skill', 'tech', 'know', 'aws', 'kubernetes', 'k8s', 'terraform', 'docker'],
+    keys: ['stack', 'skill', 'tech', 'azure', 'aws', 'cloud', 'argo', 'helm', 'know', 'aws', 'kubernetes', 'k8s', 'terraform', 'docker'],
     answer: () => SKILLS.map((s) => `${s.category}: ${s.skills.join(', ')}`).join('\n'),
   },
   {
@@ -26,7 +26,7 @@ const TOPICS: { keys: string[]; answer: () => string }[] = [
     answer: () => PROJECTS.map((p) => `${p.emoji} ${p.title}`).join('\n') + '\nPlus open-source tools like KubePulse. Scroll to Projects for details.',
   },
   {
-    keys: ['experience', 'work', 'company', 'current', 'dwise', 'career', 'years'],
+    keys: ['experience', 'work', 'company', 'current', 'dwise', 'lifetrenz', 'healthcare', 'career', 'years'],
     answer: () =>
       `Right now I'm a ${EXPERIENCE[0].role} at ${EXPERIENCE[0].company} (since ${EXPERIENCE[0].period.split(' ')[0]}). Before that: ` +
       EXPERIENCE.slice(1).map((e) => `${e.role} at ${e.company}`).join(', ') + '.',
