@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
           <span>{first}</span>
           <span>{last}</span>
         </h1>
-        <p className="role-stamp">devops engineer</p>
+        <p className="role-stamp">{RESUME_DATA.title}</p>
         <p className="hero3d-sub">{RESUME_DATA.headline}</p>
         <p className="hero3d-now">Currently: DevOps at dWise Healthcare IT (Lifetrenz), Bangalore</p>
         <div className="hero3d-actions">
