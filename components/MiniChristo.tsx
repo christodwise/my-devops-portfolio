@@ -32,8 +32,8 @@ const TOPICS: { keys: string[]; answer: () => string }[] = [
       EXPERIENCE.slice(1).map((e) => `${e.role} at ${e.company}`).join(', ') + '.',
   },
   {
-    keys: ['cert', 'education', 'degree', 'study', 'college', 'ccna'],
-    answer: () => `${RESUME_DATA.education}. Certified in ${RESUME_DATA.certifications.join(', ')}.`,
+    keys: ['cert', 'course', 'education', 'degree', 'study', 'college', 'ccna', 'resume', 'cv'],
+    answer: () => `${RESUME_DATA.education}. Courses: ${RESUME_DATA.courses.join(', ')}. Full resume: christodwise.github.io/my-devops-portfolio/Christo-Jimmy-DevOps-Resume.pdf`,
   },
   {
     keys: ['where', 'location', 'based', 'live', 'bangalore', 'remote'],

@@ -10,7 +10,8 @@ export const RESUME_DATA = {
   linkedin: "linkedin.com/in/christojimmy",
   github: "github.com/christodwise",
   education: "BCA, Bangalore University (2019)",
-  certifications: ["DevOps", "AWS Cloud Architect", "CCNA 200-301"],
+  courses: ["AWS Cloud Architect", "CCNA 200-301", "DevOps"],
+  resume: `${import.meta.env.BASE_URL}Christo-Jimmy-DevOps-Resume.pdf`,
 };
 
 // Real numbers from the resume, shown as stickers around the avatar
@@ -134,12 +135,12 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'p4',
-    title: "Database migration to RDS",
+    title: "On-prem to cloud migration",
     emoji: "🐘",
-    techStack: ["PostgreSQL", "AWS RDS", "Optimization"],
-    description: "Moved large on-prem databases to PostgreSQL on AWS, optimized the schemas and kept data intact through the switch.",
-    subtitle: "PostgreSQL on AWS RDS",
-    terminal: ["$ pg_dump legacy | psql rds", "migration complete", "$ sqitch verify", "✓ all checks passed"]
+    techStack: ["PostgreSQL", "Sqitch", "Disaster recovery"],
+    description: "Led the migration of on-premise applications and databases to the cloud, improving scalability and disaster recovery.",
+    subtitle: "Apps + databases to the cloud",
+    terminal: ["$ pg_dump onprem | psql cloud", "migration complete", "$ sqitch verify", "✓ all checks passed"]
   }
 ];
 
@@ -149,7 +150,7 @@ export const NUMBERS = [
   { value: 7, suffix: '+', label: 'years in tech' },
   { value: 3, suffix: '+', label: 'years in DevOps' },
   { value: 20, suffix: '+', label: 'public GitHub repos' },
-  { value: 3, suffix: '', label: 'certifications' },
+  { value: 3, suffix: '', label: 'clouds in production' },
 ];
 
 export const SERVICES: Service[] = [
@@ -180,8 +181,8 @@ export const SERVICES: Service[] = [
   {
     icon: 'db',
     title: 'Databases',
-    text: 'PostgreSQL and MongoDB tuning, Sqitch schema migrations and moves to AWS RDS, with data kept intact.',
-    tools: ['PostgreSQL', 'MongoDB', 'MySQL', 'Sqitch', 'RDS'],
+    text: 'PostgreSQL replication and WAL-G point-in-time recovery, Sqitch and Flyway schema migrations, and on-prem to cloud moves.',
+    tools: ['PostgreSQL', 'WAL-G', 'MongoDB', 'Sqitch', 'Flyway'],
   },
   {
     icon: 'tools',

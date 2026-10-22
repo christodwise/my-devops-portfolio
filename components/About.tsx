@@ -65,9 +65,9 @@ const About: React.FC = () => {
         </div>
 
         <div className={panel(4)}>
-          <h3>Certified</h3>
+          <h3>Training</h3>
           <ul>
-            {RESUME_DATA.certifications.map((c) => <li key={c}>{c}</li>)}
+            {RESUME_DATA.courses.map((c) => <li key={c}>{c} course</li>)}
             <li>{RESUME_DATA.education}</li>
           </ul>
         </div>

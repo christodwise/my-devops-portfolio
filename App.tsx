@@ -49,7 +49,10 @@ const App: React.FC = () => {
             </a>
           ))}
         </nav>
-        <a href={`mailto:${RESUME_DATA.email}`} className="cta-btn">Get in touch</a>
+        <div className="topbar-actions">
+          <a href={RESUME_DATA.resume} download className="resume-link">Resume</a>
+          <a href={`mailto:${RESUME_DATA.email}`} className="cta-btn">Get in touch</a>
+        </div>
       </header>
 
       <main>

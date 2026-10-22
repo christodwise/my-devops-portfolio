@@ -1,4 +1,5 @@
 import React, { lazy } from 'react';
+import { Download } from 'lucide-react';
 import Lazy3D from './Lazy3D';
 import { RESUME_DATA } from '../constants';
 import { useScrollProgress } from '../hooks/useScrollProgress';
@@ -28,6 +29,11 @@ const Hero: React.FC = () => {
         <p className="role-stamp">devops engineer</p>
         <p className="hero3d-sub">I build the pipelines, clusters and dashboards that keep apps shipping.</p>
         <p className="hero3d-now">Currently: DevOps at dWise Healthcare IT, Bangalore</p>
+        <div className="hero3d-actions">
+          <a className="resume-btn" href={RESUME_DATA.resume} download>
+            <Download size={17} aria-hidden="true" /> Download resume
+          </a>
+        </div>
       </div>
 
       <a href="#about" className="scroll-cue" aria-label="Scroll to about">

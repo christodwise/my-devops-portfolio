@@ -1,5 +1,5 @@
 import React, { lazy, useRef, useState } from 'react';
-import { Copy, Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { Copy, Download, Github, Linkedin, Mail, Phone } from 'lucide-react';
 import Lazy3D from './Lazy3D';
 import { RESUME_DATA } from '../constants';
 import { burstConfetti } from '../hooks/confetti';
@@ -48,6 +48,7 @@ const Contact: React.FC = () => {
           <a className="round-btn" href={`https://${RESUME_DATA.github}`} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={20} /></a>
           <a className="round-btn" href={`https://${RESUME_DATA.linkedin}`} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={20} /></a>
           <a className="round-btn" href={`tel:${RESUME_DATA.phone}`} aria-label="Phone"><Phone size={20} /></a>
+          <a className="round-btn" href={RESUME_DATA.resume} download aria-label="Download resume (PDF)"><Download size={20} /></a>
         </div>
 
         <div className="email-chip" {...wake}>
