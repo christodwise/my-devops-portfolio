@@ -63,9 +63,10 @@ const Rig: React.FC = () => {
   useFrame((_, dt) => {
     const aspect = size.width / size.height;
     const portrait = aspect < 0.9;
-    const d = portrait ? Math.max(1.7, 0.95 / aspect) : aspect < 1.3 ? 1.4 : 1.25;
+    const d = portrait ? 1.2 : aspect < 1.3 ? 1.4 : 1.25;
     pos.set(4.2 * d + pointer.x * 0.4, 3.6 * d - pointer.y * 0.25, 7.4 * d);
-    look.set(portrait ? 0.4 : -2.2, portrait ? 3.4 : 1.3, 0);
+    // Portrait (phones): the scene has its own box below the text, so just centre it
+    look.set(portrait ? 0.5 : -2.2, portrait ? 1.9 : 1.3, 0);
     const k = first.current ? 1 : 1 - Math.exp(-4 * Math.min(dt, 0.05));
     first.current = false;
     camera.position.lerp(pos, k);

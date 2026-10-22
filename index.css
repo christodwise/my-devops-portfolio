@@ -773,8 +773,10 @@ img, svg { display: block; max-width: 100%; }
   .release-tag { flex-direction: row; padding: 0; }
   .release-card { padding: 1.25rem; }
 
-  .contact3d { border-radius: 32px; }
-  .contact3d-copy { top: 76px; transform: none; max-width: none; right: var(--pad); }
+  /* Phones: text on top, 3D scene in its own box below, so they never overlap */
+  .contact3d { border-radius: 32px; height: auto; min-height: 0; display: flex; flex-direction: column; }
+  .contact3d-copy { position: relative; inset: auto; transform: none; max-width: none; padding: 76px var(--pad) 0; }
+  .contact3d-scene { position: relative; inset: auto; order: 1; height: 58svh; min-height: 400px; }
   .contact3d-sub { font-size: 1rem; }
 }
 
